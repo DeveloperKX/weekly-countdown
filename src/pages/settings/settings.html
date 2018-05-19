@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Settings</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngIf="configService.supportFullScreen">
+        <ion-label>Full screen</ion-label>
+        <ion-toggle [(ngModel)]="isFullScreen" (ionChange)="updateFullScreen()" disabled="{{!configService.supportFullScreen}}" checked="true"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Clock face</ion-label>
+        <ion-select [(ngModel)]="selectedClockFace" (ionChange)="onSelectClockFace()">
+            <ion-option value="{{ClockFaceId.Rainbow}}">Rainbow</ion-option>
+            <ion-option value="{{ClockFaceId.Text}}">Text</ion-option>
+            <ion-option value="{{ClockFaceId.Heptagon}}">Heptagon</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="isWeekStartDaySupported()">
+        <ion-label>Start week on</ion-label>
+        <ion-select [(ngModel)]="selectedWeekStartDay" (ionChange)="onSelectWeekStartDay()">
+            <ion-option value="{{WeekDay.Monday}}">Monday</ion-option>
+            <ion-option value="{{WeekDay.Tuesday}}">Tuesday</ion-option>
+            <ion-option value="{{WeekDay.Wednesday}}">Wednesday</ion-option>
+            <ion-option value="{{WeekDay.Thursday}}">Thursday</ion-option>
+            <ion-option value="{{WeekDay.Friday}}">Friday</ion-option>
+            <ion-option value="{{WeekDay.Saturday}}">Saturday</ion-option>
+            <ion-option value="{{WeekDay.Sunday}}">Sunday</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="isThemeSupported()">
+        <ion-label>Theme</ion-label>
+        <ion-select [(ngModel)]="selectedTheme" (ionChange)="onSelectTheme()">
+            <ion-option value="{{Theme.Beige}}">Beige</ion-option>
+            <ion-option value="{{Theme.Yellow}}">Yellow</ion-option>
+            <ion-option value="{{Theme.White}}">White</ion-option>
+        </ion-select>
+    </ion-item>
+</ion-content>`
+
+<ion-footer>
+    <ion-label class="version">Version {{versionNumber}}</ion-label>
+</ion-footer>

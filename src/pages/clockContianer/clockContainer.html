@@ -1,0 +1,7 @@
+<ion-content [ngSwitch]="currentClockFace" (tap)="tapEvent($event)" class="clock-container no-scroll">
+    <div class="fixed-container" ion-fixed>
+        <clock-rainbow *ngSwitchCase="0" [clockEvent$]="clockEvent$"></clock-rainbow>
+        <clock-text *ngSwitchCase="1" [clockEvent$]="clockEvent$"></clock-text>
+        <clock-heptagon *ngSwitchCase="2" [clockEvent$]="clockEvent$"></clock-heptagon>
+    </div>
+</ion-content>

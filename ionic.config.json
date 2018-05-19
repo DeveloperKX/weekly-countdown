@@ -1,0 +1,11 @@
+{
+  "name": "weekly-countdown",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {},
+    "gulp": {
+      "enabled": true
+    }
+  }
+}

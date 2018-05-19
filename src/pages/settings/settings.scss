@@ -1,0 +1,13 @@
+ion-label.version {
+    margin-left: 18px;
+    color: gray
+}
+
+ion-alert {
+    @media only screen and (max-height: 360px) {
+        div.alert-radio-group {
+            max-height: 160px !important;
+        }
+    }
+
+}
